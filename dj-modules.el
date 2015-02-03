@@ -9,5 +9,4 @@
 ;;(require 'dj-cli)
 (require 'dj-gui)
 (require 'dj-osx)
-(setq gdb-many-windows 't)
 ;;; dj-modules.el ends here

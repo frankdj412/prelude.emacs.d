@@ -5,6 +5,8 @@
 ;;
 ;;; Code
 
+(setq gdb-many-windows 't)
+
 (defun cc/get-file-name-with-ext (name)
   (car (last (split-string name "/"))))
 
