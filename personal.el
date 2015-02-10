@@ -48,4 +48,13 @@
 (require 'ack)
 
 
+(prelude-require-package 'helm-swoop)
+(require 'helm-swoop)
+
+(eval-after-load 'evil-leader
+  (evil-leader/set-key
+    "ss" 'helm-swoop
+    "sS" 'helm-multi-swoop
+    "s C-s" 'helm-multi-swoop-all))
+
 ;;;
