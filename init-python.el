@@ -6,11 +6,10 @@
 ;; Note that this configuration has conflict with gdb command.
 
 ;;; Code:
-(prelude-require-package 'elpy)
 
 (require 'prelude-programming)
 
-;; Copy pasted from ruby-mode.el
+;; Copy pasted from python-mode.el
 (defun prelude-python--encoding-comment-required-p ()
   (re-search-forward "[^\0-\177]" nil t))
 
@@ -56,6 +55,7 @@
   "Defaults for Python programming."
   (subword-mode +1)
   (eldoc-mode)
+  (semantic-mode 1)
   (setq-local electric-layout-rules
               '((?: . (lambda ()
                         (and (zerop (first (syntax-ppss)))
@@ -67,7 +67,6 @@
   (add-hook 'post-self-insert-hook
             #'electric-layout-post-self-insert-function nil 'local)
   (add-hook 'after-save-hook 'prelude-python-mode-set-encoding nil 'local))
-
 (setq prelude-python-mode-hook 'prelude-python-mode-defaults)
 
 (add-hook 'python-mode-hook (lambda ()
@@ -75,8 +74,10 @@
 
 ;; The default is automatic, which seems to point to Rope.
 ;; Jedi is much more lightweight and its parsing function is more robust
+(prelude-require-package 'elpy)
 (setq elpy-rpc-backend "jedi")
-(eval-after-load 'python '(semantic-mode 1))
+;; (setq elpy-use-ipython t)
+;; (eval-after-load 'python '(semantic-mode 1))
 
 (elpy-enable)
 
@@ -89,11 +90,6 @@
   "cz" 'elpy-shell-switch-to-shell
   "cc" 'elpy-shell-send-region-or-buffer
   "cd" 'python-shell-send-defun)
-
-;; Rope seems to have some problem
-
-
-;; TODO: Auto import library
 
 ;; TODO: Go to definition: if two frames are available, switch to it.
 ;;; init-python.el ends here
