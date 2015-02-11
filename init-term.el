@@ -32,10 +32,14 @@
   "Send tab in term mode."
   (interactive
   (term-send-raw-string "\t")))
+
 (add-to-list 'term-bind-key-alist '("<tab>" . term-send-tab))
+(evil-define-key 'insert term-mode-map
+  "\C-w" 'term-send-backward-kill-word)
 
 (evil-leader/set-key
-  "ast" 'multi-term)
+  "ast" 'multi-term
+  "asn" 'multi-term-next)
 (global-set-key (kbd "C-c m") 'multi-term)
 
 ;;; init-util.el ends here
