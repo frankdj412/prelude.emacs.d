@@ -40,6 +40,10 @@
 (evil-leader/set-key
   "ast" 'multi-term
   "asn" 'multi-term-next)
-(global-set-key (kbd "C-c m") 'multi-term)
+
+(global-set-key (kbd "s-}") 'multi-term-next)
+(global-set-key (kbd "s-{") 'multi-term-prev)
+(global-set-key (kbd "s-t") 'multi-term)
+
 
 ;;; init-util.el ends here
