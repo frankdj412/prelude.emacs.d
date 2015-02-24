@@ -1,4 +1,4 @@
-;;; package -- Summary
+;;; init-org.el -- Summary
 
 ;;; Commentary:
 
@@ -78,5 +78,8 @@
 ;;                             %s;}</style>\n" my-pre-bg my-pre-fg))))))
 
 ;; (add-hook 'org-export-before-processing-hook 'my/org-inline-css-hook)
+
+
+;; TODO: Write a function storing the images pasted into org mode.
 
 ;;; init-org-mode.el ends here

@@ -8,7 +8,6 @@
 ;; eshell ignore cases
 (setq eshell-cmpl-ignore-case t)
 
-;; eshell shorten path name
 (setq eshell-prompt-function
       (lambda ()
         (propertize
