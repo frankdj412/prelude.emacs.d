@@ -18,7 +18,7 @@
 
 (dj/set-font "Source Code Pro for Powerline" 13)
 
-(setq-default line-spacing 2)
+(setq-default line-spacing 3)
 (set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
 
 (add-to-list 'default-frame-alist '(width . 86))
