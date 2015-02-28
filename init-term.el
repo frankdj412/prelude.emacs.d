@@ -18,7 +18,11 @@
 (add-to-list 'term-bind-key-alist '("<tab>" . term-send-tab))
 
 (evil-define-key 'insert term-raw-map
+  "\C-y" 'term-paste
   "\C-w" 'term-send-backward-kill-word)
+
+(evil-define-key 'normal term-raw-map
+  "p" 'term-paste)
 
 (evil-leader/set-key
   "ast" 'multi-term
