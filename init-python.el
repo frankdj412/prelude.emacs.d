@@ -81,7 +81,8 @@
 
 (elpy-enable)
 
-(define-key python-mode-map (kbd "s-.") 'elpy-goto-definition)
+(define-key python-mode-map (kbd "s->") 'elpy-goto-definition)
+(define-key python-mode-map (kbd "s-<") 'pop-tag-mark)
 (define-key python-mode-map (kbd "s-*") 'pop-tag-mark)
 
 (evil-leader/set-key-for-mode 'python-mode-map
